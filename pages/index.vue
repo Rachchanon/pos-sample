@@ -465,6 +465,12 @@ export default {
       let totalPrice = this.allListPrice.sum();
       this.sumPrice = totalPrice;
 
+      let emptyList = this.listProduct.isEmpty()
+
+      if (emptyList) {
+        this.sumPrice = 0
+      }
+
       //หา index ของ allItem
       this.allItem.forEach((e, index) => {
         let i = this.allItem.findIndex(e);
